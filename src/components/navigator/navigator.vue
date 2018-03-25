@@ -1,7 +1,7 @@
 <template>
 
 <div class="nav_container">
-    <div class="nav_personal"></div>
+    <div @click="showPersonal" class="nav_personal"></div>
     <div class="nav_search"></div>
     <div class="nav_list">
         <ul>
@@ -14,11 +14,18 @@
 
 <script>
 
+import bus from '@/bus';
+
 export default {
     data() {
         return {
             
         }
+    },
+    methods: {
+        showPersonal() {
+            bus.$emit('SHOW_PERSONAL', true);
+        },
     }
 }
 
