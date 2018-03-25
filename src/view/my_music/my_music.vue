@@ -15,11 +15,10 @@ import mySheetSelf from './my_sheet_self'
 import mySheetCollection from './my_sheet_collection'
 
 
-
 export default {
     data() {
         return {
-            
+            test: 1
         }
     },
     components: {
