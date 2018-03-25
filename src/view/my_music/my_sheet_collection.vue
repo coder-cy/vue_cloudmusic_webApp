@@ -38,6 +38,10 @@ export default {
 
 <style lang="scss" scoped="scoped" type="text/css">
 
+.my_sheet_collection_container {
+    padding-bottom: 50px;
+}
+
 </style>
 
 
