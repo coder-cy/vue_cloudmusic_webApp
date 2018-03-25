@@ -51,6 +51,7 @@ $icon_search: url(../../../static/icon/search.png);
     width: 100%;
     height: $button_height;  
     background-color: $main_color; 
+    z-index: 1;
     .nav_personal {
         @extend .size_default;
         @extend .background_default;

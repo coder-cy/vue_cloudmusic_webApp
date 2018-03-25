@@ -42,8 +42,6 @@ $height: 25px;
 
 
 .title_switch_container {
-    position: relative;
-    top: 50px;
     height: $height;
     background-color: darken(#f3f3f3, 5%);
 

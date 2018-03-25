@@ -1,3 +1,1 @@
-const bus = new Vue();
-
-export default bus;
+export default new Vue();

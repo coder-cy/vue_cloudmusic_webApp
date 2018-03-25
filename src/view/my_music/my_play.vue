@@ -51,8 +51,6 @@ $list_height: 50px;
 
 
 .my_play_container {
-    position: relative;
-    top: $list_height;
     ul {
         li {
             box-sizing: border-box;

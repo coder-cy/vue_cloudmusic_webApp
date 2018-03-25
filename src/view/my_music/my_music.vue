@@ -32,7 +32,10 @@ export default {
 </script>
 
 <style lang="scss" scoped="scoped" type="text/css">
-
+.my_music_container {
+    position: relative;
+    top: 50px;
+}
 </style>
 
 

@@ -42,8 +42,6 @@ $height: 60px;
 
 
 .sheet_list_container {
-    position: relative;
-    top: 50px;
     height: $height;
     border-bottom: .5px solid #d3d3d3;
     .cover {
