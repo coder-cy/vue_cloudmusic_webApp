@@ -91,8 +91,8 @@ export default {
 
 .background_default {
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+    background-position: center center;
+    background-size: 100% 100%;
 }
 .info_default {
     float: left;    
@@ -125,27 +125,32 @@ export default {
             }
             .info_list {
                 position: absolute;
-                bottom: 15px;
+                bottom: 5%;
                 width: 100%;
                 height: 30px;
                 .user_name {
                     @extend .info_default;
-                    margin-left: 15px;
+                    width: 100px;
+                    line-height: 30px;
+                    margin-left: .5rem;
                     color: #fff;
-                    font-size: 16px;
+                    font-size: 14px;
                 }
                 .user_class {
                     @extend .info_default;
                     @extend .background_default;
                     width: 14px;
                     height: 14px;
-                    margin: 5px;
+                    margin-top: 8px;
+                    line-height: 30px;
                 }
                 .user_level {
                     @extend .info_default;
                     width: 30px;
                     height: 18px;
                     line-height: 18px;
+                    margin-left: 5px;
+                    margin-top: 3px;
                     border: 1px solid #fff;
                     border-radius: 8px;
                     font-style: normal;
@@ -156,7 +161,8 @@ export default {
                 .user_check_in {
                     float: right;
                     height: 20px;
-                    margin-right: 15px;
+                    margin-top: 2px;
+                    margin-right: 10px;
                     padding: 0 5px;
                     line-height: 20px;
                     border: 1.5px solid #fff;
