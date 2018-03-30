@@ -70,7 +70,7 @@ $height: 60px;
     .handler {
         float: right;
         position: relative;
-        width: $height;
+        width: $height - 10;
         height: $height;
         .handler_icon {
             position: absolute;

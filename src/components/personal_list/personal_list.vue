@@ -30,7 +30,7 @@ $height: 40px;
 .background_default {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 .info_default {    
     float: left;
@@ -40,19 +40,25 @@ $height: 40px;
 
 .personal_list_container {
     height: $height;
+    background: #fff;
+    vertical-align: middle;
     .list_icon {
         @extend .background_default;
         @extend .info_default;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
     }
     .list_title {
         @extend .info_default;
-        font-size: 16px;
+        font-size: 14px;
     }
     .list_remark {
         @extend .info_default;
         float: right;
         font-size: 12px;
         color: gray;
+        margin-right: 10px;
     }
 }
 

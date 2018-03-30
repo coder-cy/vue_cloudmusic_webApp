@@ -1,7 +1,7 @@
 <template>
 
 <div @click="hidePersonal" :style="{left: isShow ? '0' : '-100%'}" class="personal_container">
-    <div @click.stop class="personal_content">
+    <div @touchstart.stop @click.stop class="personal_content">
         <div :style="{backgroundImage: `url(${userBgImage})`}" class="main_info">
             <i :style="{backgroundImage: `url(${userAvatar})`}" class="personal_avatar"></i>
             <div class="info_list">
@@ -23,8 +23,13 @@
         <ul class="personal_list3">
             <li is="personal-list" v-for="(li,i) in list3" :listData="li" :key="i"></li>
         </ul>
-        <div class="personal_config"></div>
-    </div>
+    </div> 
+    <ul @click.stop class="personal_config">
+        <li v-for="(option,i) in options" :key="i">
+            <i :style="{backgroundImage: `url(${option.icon})`}"></i>
+            <span>{{option.title}}</span>
+        </li>
+    </ul>
 </div>
 
 </template>
@@ -37,7 +42,6 @@ import personalList from '@/components/personal_list/index';
 export default {
     components: {
         personalList,
-
     },
     data() {
         return {
@@ -47,21 +51,26 @@ export default {
             userAvatar:  '../../../static/icon/personal_avatar.jpg',
             userClass: '../../../static/icon/user_class.png',
             list1: [
-                {icon: '', title: '我的消息'},
-                {icon: '', title: '我的会员', remark: '2018.05.10到期'},
-                {icon: '', title: '商城'},
+                {icon: require('../../../static/icon/p1.png'), title: '我的消息'},
+                {icon: require('../../../static/icon/p2.png'), title: '我的会员', remark: '2018.05.10到期'},
+                {icon: require('../../../static/icon/p3.png'), title: '商城'},
             ],
             list2: [
-                {icon: '', title: '我的好友'},
-                {icon: '', title: '附近的人', remark: '2018.05.10到期'},
+                {icon: require('../../../static/icon/p4.png'), title: '我的好友'},
+                {icon: require('../../../static/icon/p5.png'), title: '附近的人', remark: '2018.05.10到期'},
             ],
             list3: [
-                {icon: '', title: '个性换肤', remark: '官方红'},
-                {icon: '', title: '定时播放'},
-                {icon: '', title: '音乐闹钟'},
-                {icon: '', title: '驾驶模式'},
-                {icon: '', title: '音乐云盘'},
+                {icon: require('../../../static/icon/p6.png'), title: '个性换肤', remark: '官方红'},
+                {icon: require('../../../static/icon/p7.png'), title: '定时播放'},
+                {icon: require('../../../static/icon/p8.png'), title: '音乐闹钟'},
+                {icon: require('../../../static/icon/p9.png'), title: '驾驶模式'},
+                {icon: require('../../../static/icon/p10.png'), title: '音乐云盘'},
             ],
+            options: [
+                {icon: require('../../../static/icon/personal_night_mode.png'), title: '夜间模式'},
+                {icon: require('../../../static/icon/personal_config.png'), title: '设置'},
+                {icon: require('../../../static/icon/personal_exit.png'), title: '退出'},
+            ]
         }
     },
     methods: {
@@ -106,10 +115,11 @@ export default {
     height: 100%;
     z-index: 20;
     transition: .5s;
+    overflow: auto;
     .personal_content {
         width: 75%;
-        height: 100%;
-        background: #fff;
+        height: 105%;
+        background: rgb(238,238,238);
         .main_info {
             @extend .background_default;
             position: relative;
@@ -180,7 +190,38 @@ export default {
                 }
             }
         }
+        .personal_list1 {
+            margin-bottom: 5px;
+        }
+        .personal_list2 {
+            margin-bottom: 5px;
+        }
     }
+
+    .personal_config {
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        width: 75%;
+        height: 40px;
+        li {
+            @extend .background_default;
+            float: left;
+            height: 100%;
+            line-height: 40px;
+            i {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+                margin-right: 0px;
+                vertical-align: middle;
+            }
+            span {
+                display: inline-block;  
+            }
+        }
+    }    
 }
 
 </style>
